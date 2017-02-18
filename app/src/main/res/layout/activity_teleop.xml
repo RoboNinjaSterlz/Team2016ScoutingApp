@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_teleop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.goteam2016.team2016scouting.Teleop">
+
+    <Button
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonNext"
+        android:onClick="nextActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="36sp" />
+
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gearNumber"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:text="Climbed the Airship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/climbCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_above="@+id/buttonNext"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp"
+        android:onClick="teleIsClimbAirshipCheckBoxButton"/>
+
+    <Button
+        android:text="-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="decreaseScoreGear"
+        android:id="@+id/gearMinusButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textSize="30sp"
+        android:minHeight="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/gearText"
+        android:layout_toRightOf="@+id/gearText" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gearAddButton"
+        android:onClick="increaseScoreGear"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/gearText" />
+
+    <TextView
+        android:text="Gear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gearText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        android:layout_below="@+id/gearNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
+
+    <CheckBox
+        android:text="Low Goal Shooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginTop="54dp"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="teleIsLowGoalCheckBoxButton"/>
+
+    <CheckBox
+        android:text="High Goal Shooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/gearText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="teleIsHighGoalCheckBoxButton"/>
+
+    <TextView
+        android:text="How good is their shooter?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="40sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp">
+
+
+        <RadioButton
+            android:text="Horrible(0%)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noneRadioButton"
+            android:layout_above="@+id/fewRadioButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:onClick="radioButtonClicked"
+            android:textSize="40sp" />
+
+        <RadioButton
+            android:text="Meh(1%+)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fewRadioButton"
+            android:layout_above="@+id/someRadioButton"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:onClick="radioButtonClicked"
+            android:textSize="40sp" />
+
+        <RadioButton
+            android:text="Alright(50%+)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/someRadioButton"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_alignBottom="@+id/manyRadioButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:onClick="radioButtonClicked"
+            android:textSize="40sp" />
+
+        <RadioButton
+            android:text="Fantastic(80%+)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/manyRadioButton"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_above="@+id/climbCheckBox"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="radioButtonClicked"
+            android:textSize="40sp" />
+    </RadioGroup>
+
+</RelativeLayout>
